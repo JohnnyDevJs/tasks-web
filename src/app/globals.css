@@ -2,26 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+.ql-toolbar.ql-snow{
+  border-top: theme('borderWidth.0') !important;
+  border-left: theme('borderWidth.0') !important;
+  border-right: theme('borderWidth.0') !important;
+  border-bottom: 0.125rem solid theme('colors.brown.300') !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.ql-container.ql-snow {
+  border: theme('borderWidth.0') !important
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.ql-stroke {
+  stroke: theme('colors.white') !important;
+}
+
+.ql-snow svg:hover .ql-stroke,
+.ql-active .ql-stroke {
+  stroke: theme('colors.orange.300') !important;
+}
+
+.ql-fill {
+  fill: theme('colors.white') !important;
+}
+
+.ql-snow svg:hover .ql-fill,
+.ql-active .ql-fill {
+  fill: theme('colors.orange.300') !important;
+}
+
+.ql-editor {
+  font-size: theme('fontSize.base') !important; 
+}
+
+.ql-toolbar.ql-snow .ql-picker-label {
+  border: theme('borderWidth.0') !important;
+}
+
+.ql-picker-label:before {
+  color: theme('colors.white') !important;
+}
+
+.ql-picker-label.ql-active:before {
+  color: theme('colors.orange.300') !important;
+}
+
+.ql-snow .ql-picker-options {
+  background-color: theme('colors.brown.700') !important;
+  border: 0.125rem solid theme('colors.brown.300') !important;
+  border-radius: theme('borderRadius.lg')
+}
+
+.ql-picker-item:before {
+  color: theme('colors.white') !important;
+}
+
+.ql-picker-item:hover:before {
+  color: theme('colors.orange.300') !important;
+}
+
+.ql-editor.ql-blank:before {
+  content: 'Digite qual sua tarefa...' !important;
+  color: theme('colors.brown.900') !important;
+  font-style: normal !important;
+  mix-blend-mode: screen;
 }
