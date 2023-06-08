@@ -23,13 +23,15 @@ export function Header() {
           {session && (
             <LinkPage
               path="/dashboard"
-              className="bg-orange-300 hover:bg-orange-500"
+              className="bg-orange-300 hover:bg-orange-500 max-sm:hidden"
               icon={LayoutDashboard}
             >
               Meu Painel
             </LinkPage>
           )}
         </div>
+
+
 
         {session ? (
           <Dropdown
@@ -50,6 +52,19 @@ export function Header() {
           </Button>
         )}
       </div>
+
+      <div className="max-sm:flex sm:hidden items-center justify-center mt-4">
+        {session && (
+          <LinkPage
+            path="/dashboard"
+            className="bg-orange-300 hover:bg-orange-500"
+            icon={LayoutDashboard}
+          >
+            Meu Painel
+          </LinkPage>
+        )}
+      </div>
+
     </header>
   )
 }
